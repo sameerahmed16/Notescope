@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sound-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: wave 1.5s linear infinite;
+}
+.pulse-red {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+
+@keyframes wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #d8d8d8;
+    --foreground: #d8d8d8;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+@import "~@uiw/react-markdown-editor/markdown-editor.css";
+
+@layer utilities {
+  .markdown {
+    @apply break-words space-y-2;
+  }
+
+  .markdown h1 {
+    @apply text-4xl font-bold mt-2 mb-5;
+  }
+
+  .markdown h2 {
+    @apply text-3xl font-bold mt-2 mb-5;
+  }
+
+  .markdown h3 {
+    @apply text-2xl font-bold mt-2 mb-5;
+  }
+
+  .markdown h4 {
+    @apply text-xl font-bold;
+  }
+
+  .markdown h5 {
+    @apply text-lg font-bold ;
+  }
+
+  .markdown h6 {
+    @apply text-base font-bold ;
+  }
+
+  .markdown a {
+    @apply text-blue-500 underline;
+  }
+
+  .markdown p {
+    @apply leading-7;
+  }
+
+  .markdown underline {
+    @apply underline;
+  }
+
+  .markdown ul {
+    @apply list-disc ml-8 mb-2;
+  }
+
+  .markdown li li {
+    list-style-type: circle;
+  }
+
+  .markdown li li li {
+    list-style-type: square;
+  }
+
+  .markdown ol {
+    @apply list-decimal ml-8 mb-1;
+  }
+
+  .markdown li {
+    @apply leading-7 pl-2 marker:font-bold;
+  }
+
+  .markdown blockquote {
+    @apply border-l-4 border-gray-300 pl-4 pb-4;
+  }
+
+  .markdown pre {
+    @apply bg-zinc-700 text-white rounded p-4 pb-4;
+  }
+
+  .markdown code {
+    @apply bg-zinc-700 text-white rounded p-1;
+  }
+
+  .markdown table {
+    @apply w-full border-collapse border border-gray-300 pb-4;
+  }
+
+  .markdown table th {
+    @apply bg-gray-100 border border-gray-300 px-4 py-2;
+  }
+
+  .markdown table td {
+    @apply border border-gray-300 px-4 py-2;
+  }
+
+  .markdown table tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+
+  .markdown table tr:hover {
+    @apply bg-gray-200;
+  }
+
+  .markdown img {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown hr {
+    @apply border-neutral-700 border-t my-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper img {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper picture {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper picture img {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper picture source {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper picture source img {
+    @apply mx-auto mb-4;
+  }
+
+  .markdown .gatsby-resp-image-wrapper picture img {
+    @apply mx-auto mb-4;
+  }
+}
