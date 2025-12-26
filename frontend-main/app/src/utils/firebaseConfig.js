@@ -6,13 +6,13 @@ import { getFirestore } from "firebase/firestore"; // Firestore to store user da
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD7xK93Tq-3-Au-exmj9jVeFeUZ3KJp9-w",
-  authDomain: "notescope-92320.firebaseapp.com",
-  projectId: "notescope-92320",
-  storageBucket: "notescope-92320.appspot.com",
-  messagingSenderId: "217835463409",
-  appId: "1:217835463409:web:7e5dce9021ddbcb1efff50",
-  measurementId: "G-VVFZNY3DCD",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
